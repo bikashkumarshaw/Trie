@@ -8,6 +8,7 @@ class Trie(object):
         self.char_is_end = False
 
 def add(root, word):
+    word = word.lower()
     node = root
     for char in word:
         children_found = False
@@ -70,6 +71,6 @@ if __name__=="__main__":
         line = line.strip()
         add(root, line)
 
-    res = get(root, "h")
+    res = get(root, args.prefix.lower())
     if res:
         print res
